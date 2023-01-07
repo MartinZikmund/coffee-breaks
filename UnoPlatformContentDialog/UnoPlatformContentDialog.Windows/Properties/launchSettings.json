@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "UnoPlatformContentDialog.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
