@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "UnoConnectivityCheck.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
