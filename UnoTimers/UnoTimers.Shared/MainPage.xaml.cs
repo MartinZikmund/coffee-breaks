@@ -2,13 +2,11 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
+using System.Threading;
 using System.Timers;
 
 namespace UnoTimers;
 
-/// <summary>
-/// An empty page that can be used on its own or navigated to within a Frame.
-/// </summary>
 public sealed partial class MainPage : Page
 {
     public MainPage()
@@ -21,7 +19,7 @@ public sealed partial class MainPage : Page
         //StartThreadingTimer();
         //StartTimersTimer();
         //StartDispatcherTimer();
-        StartDispatcherQueueTimer();
+        //StartDispatcherQueueTimer();
     }
 
     private void StopTimer()
@@ -29,7 +27,7 @@ public sealed partial class MainPage : Page
         //StopThreadingTimer();
         //StopTimersTimer();
         //StopDispatcherTimer();
-        StopDispatcherQueueTimer();
+        //StopDispatcherQueueTimer();
     }
 
     #region System.Threading.Timer
@@ -38,7 +36,11 @@ public sealed partial class MainPage : Page
 
     private void StartThreadingTimer()
     {
-        _threadingTimer ??= new System.Threading.Timer(ThreadingTimerCallback, state: null, TimeSpan.FromMilliseconds(500), TimeSpan.FromMilliseconds(500));
+        _threadingTimer ??= new System.Threading.Timer(
+            ThreadingTimerCallback, 
+            state: null, 
+            dueTime: TimeSpan.FromMilliseconds(500), 
+            period: TimeSpan.FromMilliseconds(500));
     }
 
     private void ThreadingTimerCallback(object state)
