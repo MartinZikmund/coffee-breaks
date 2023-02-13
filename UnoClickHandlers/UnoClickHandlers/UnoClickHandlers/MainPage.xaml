@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="UnoClickHandlers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Spacing="12" Padding="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Content="Click event handler" Click="Button_Click" />
+        <Button Content="Data-bound command" Command="{x:Bind ViewModel.ClickCommand}" ClickMode="Press" />
+        <Button Content="Click event x:Bind (two args)" Click="{x:Bind ViewModel.TwoArgClick}" />
+        <Button Content="Click event x:Bind (no args)" Click="{x:Bind ViewModel.NoArgClick}" />
+    </StackPanel>
+</Page>

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "UnoClickHandlers.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
